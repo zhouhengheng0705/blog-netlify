@@ -1,14 +1,20 @@
 ---
 title: Markdown的常用写法
 date: 2018-11-21 22:08:11
+categories:
+- hexo博客技术
 tags:
-banner_img: https://github.com/zhouhengheng0705/zhouhengheng0705.github.io/blob/master/images/bumblebee.jpg?raw=true
+- Markdown
+keywords: Markdown,写法
+description:
+copyright:
+banner_img: https://github.com/zhouhengheng0705/zhouhengheng0705.github.io/blob/master/Markdown%E7%9A%84%E5%86%99%E6%B3%95/wallhaven-314029.png?raw=true
 ---
-!["Markdown"](Markdown的写法/Markdown.png)
+<font size="4"><strong>hexo博客的文章都是用Markdown格式编写的，所以要想熟练的编写hexo博客的话，一些常用的格式还是需要了解一下的，本篇介绍几个常用的Markdown写法，有兴趣的小伙伴们可以学习一下。</strong></font><br/>
+!["Markdown"](https://github.com/zhouhengheng0705/zhouhengheng0705.github.io/blob/master/Markdown%E7%9A%84%E5%86%99%E6%B3%95/super_mario_history-wallpaper-960x600.jpg?raw=true)
 <!--more-->
-hexo博客的文章都是用Markdown格式编写的，所以要想熟练的编写hexo博客的话，一些常用的格式还是需要了解一下的，下面我列举了几个常用的写法，有兴趣的小伙伴们可以学习一下。
 
-<font color="ff0000">1.列表</font>
+<font size="4"><strong>1.列表</strong></font>
 
 ```
 例:
@@ -20,7 +26,7 @@ hexo博客的文章都是用Markdown格式编写的，所以要想熟练的编�
 
 ```
 
-<font color="ff0000">2.标题</font>
+<font size="4"><strong>2.标题</strong></font>
 
 ```
 例:
@@ -31,14 +37,14 @@ hexo博客的文章都是用Markdown格式编写的，所以要想熟练的编�
 ※注意:「#」和文字之间有半角空格。
 ```
 
-<font color="ff0000">3.强调</font>
+<font size="4"><strong>3.强调</strong></font>
 
 ```
 例:
 **Hello World**
 ```
 
-<font color="ff0000">4.引用</font>
+<font size="4"><strong>4.引用</strong></font>
 
 ```
 例:
@@ -47,14 +53,14 @@ hexo博客的文章都是用Markdown格式编写的，所以要想熟练的编�
 ※注意:「>」和文字之间有半角空格。
 ```
 
-<font color="ff0000">5.链接</font>
+<font size="4"><strong>5.链接</strong></font>
 
 ```
 例:
 [我的博客](http://www.zhouhengheng.com)
 ```
 
-<font color="ff0000">6.取消线</font>
+<font size="4"><strong>6.取消线</strong></font>
 
 ```
 例:
@@ -62,7 +68,7 @@ hexo博客的文章都是用Markdown格式编写的，所以要想熟练的编�
 ```
 
 
-<font color="ff0000">7.水平线</font>
+<font size="4"><strong>7.水平线</strong></font>
 
 ```
 格式: 从「>」，「_」，「*」中任意并列三个以上
@@ -74,7 +80,7 @@ ___
 ***
 ```
 
-<font color="ff0000">8.插入图片</font>
+<font size="4"><strong>8.插入图片</strong></font>
 
 ```
 格式: ![代替文字](图片URL “标题”)」）
@@ -85,7 +91,7 @@ ___
 ```
 
 
-<font color="ff0000">9.段落和改行</font>
+<font size="4"><strong>9.段落和改行</strong></font>
 
 ```
 段落空一整行。
@@ -100,7 +106,19 @@ ___
 
 ```
 
-<font color="ff0000">10.代码引用</font>
+<font size="4"><strong>10.段首空格/段首缩进</strong></font>
+```
+格式:
+&nbsp;//半角空格
+&emsp;//全角空格
+
+例:
+
+&emsp;我叫张三。&nbsp;我喜欢学习和分享。
+
+```
+
+<font size="4"><strong>11.代码引用</strong></font>
 
 
 ①指定开发语言时

@@ -8,9 +8,10 @@ menu:
   tags: /标签
   about: /关于
   search: /搜索
+  study: /学习
   read: /读书
+  travel: /旅行
   sitemap: /站点地图
-  commonweal: /公益 404
 sidebar:
   overview: 站点概览
   About: /about/index.md
@@ -20,7 +21,7 @@ customize:
         height: 60
         url: /images/logo.png
 # Site
-title: Shuuの博客
+title: ShuuのBlog
 subtitle: Make progress everyday.
 description: As long as we breathe, we must fight.
 keywords: Self-discipline
@@ -30,9 +31,10 @@ timezone: Asia/Tokyo
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://zhouhengheng.com
+url: https://zhouhengheng.com
 root: /
-permalink: :year/:month/:day/:title/
+#permalink: :year/:month/:day/:title/ #2018/12/30修改
+permalink: :title.html
 permalink_defaults:
 
 # Directory
@@ -123,6 +125,13 @@ serch: #本地搜索插件
   field: post
   format: html
   limit: 10000
+
+##nofollow标签是由谷歌领头创新的一个“反垃圾链接”的标签，并被百度、yahoo等各大搜索引擎广泛支持，
+##引用nofollow标签的目的是：用于指示搜索引擎不要追踪（即抓取）网页上的带有nofollow属性的任何出站链接，以减少垃圾链接的分散网站权重。
+nofollow:
+    enable: true
+    exclude:
+        - zhouhengheng.com
 
 
 

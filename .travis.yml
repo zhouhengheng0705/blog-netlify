@@ -1,0 +1,47 @@
+language: node_js  #设置语言
+node_js: stable  #设置相应的版本
+
+cache:
+    apt: true
+    directories:
+        - node_modules #缓存不经常更改的内容
+
+before_install:
+    - export TZ='Asia/Shanghai' #更改时区
+
+install:
+  - npm install  #安装hexo及插件
+
+script:
+  - hexo clean  #清除
+  - hexo g && gulp  #生成
+
+after_script:
+  - git clone https://${GH_REF} .deploy_git  #GH_REF是最下面配置的仓库地址
+  - cd .deploy_git
+  - git checkout master
+  - cd ../
+  - mv .deploy_git/.git/ ./public/   #这一步之前的操作是为了保留master分支的提交记录，不然每次git init的话只有1条commit
+  - cd ./public
+  - git config user.name "zhouhengheng0705"  #修改name
+  - git config user.email "zhouhengheng99@gmail.com"  #修改email
+  - git add .
+  - git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"  #提交记录包含时间 跟上面更改时区配合
+  - git push --force --quiet "https://${Travis_Token}@${GH_REF}" master:master  #Travis_Token是在Travis中配置环境变量的名称
+
+branches:
+  only:
+    - master  #只监测master分支，master是我的分支的名称，可根据自己情况设置
+env:
+ global:
+   - GH_REF: github.com/zhouhengheng0705/zhouhengheng0705.github.io.git  #设置GH_REF，注意更改yourname
+   - secure: "FrNss0DvkPXfAR+3tBugtCt+EM/hVVvQFL9LXIZ3iIX4VVfXC+iDOowyGZ4PDo+IyoTmqVxjkFR/PW4bqKJdNavGgITF0RLyBadtNu0HwqySJxBE6whKAw/28zTLFWt70ffxnvEJnCCVSz/QvJAbOtrTRuXR3yGfBAMhh+K0sm27Ecu0de7B2P4oDOnuGLoaBHd8ef6KieQDoT1tmH4e6H8j21gLc4PXvThAstjnyqAjvHRSpf7ldBiSPFkP9I7ik40VQpHzWaL+FyFIp8PcEuDNxIv8SSdOj2Id+EKe4G0jykJH8NRWSHCAy8svvBbudlLYKcTZQQEwLU6wQYnFIdu7vCcBUm6dX/Rvm2r9Sow4P6UYLwW1DDIzl59xJrCC1SDsAl5gb+JGGllnM4QM9Z2P15VZxJVD8HbfUYQrrAr8+7Ea6EgUkvTnCnRZ+rVoy+8+cAU8D886zaGVz8voaNzZYMb261yNpFXrRKbwnapcDsXNGqiW6fn3u5mAna3ysuBtGPz/ZHQ9ZHhLoS1jzGsyAa4oDwDi6VZOGfD7g1aRNlFqzqsY6+Zegpd1H23m/ogK4ytcloKrZ4o/0ZPkoOu2ifgTsVpXplC4SpvaaquvzTkMxWasr27z/ak9MyMMhOUf45gefRhll5RDH3OYxdSglF5bDEepA1n5/T+jUYU="
+
+# configure notifications (email, IRC, campfire etc)
+# please update this section to your needs!
+# https://docs.travis-ci.com/user/notifications/
+notifications:
+  email:
+    - zhouhengheng99@gmail.com
+  on_success: change
+  on_failure: always
