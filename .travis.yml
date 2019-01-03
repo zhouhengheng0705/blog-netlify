@@ -14,7 +14,7 @@ install:
 
 script:
   - hexo clean  #清除
-  - hexo g && gulp  #生成
+  - hexo g   #生成
 
 after_script:
   - git clone https://${GH_REF} .deploy_git  #GH_REF是最下面配置的仓库地址
@@ -34,8 +34,8 @@ branches:
     - master  #只监测master分支，master是我的分支的名称，可根据自己情况设置
 env:
  global:
-   - GH_REF: github.com/zhouhengheng0705/zhouhengheng0705.github.io.git  #设置GH_REF，注意更改yourname
-   - secure: "H3V9CshcZpdyd6KuHPAr8HPTsg1P6EU/bnI4Xho4bdqpkOhBEEdY35rI0bP4ieFn6DY1Y/wliQy+ZMO4gYT1WvahO43W3OEl4y3PunoUO4bXyPPNU2IWZe3KKRMjSVq1mN7zKF9LVfh0/NGiIupHRqMOnG8nHsvN/KhnczyDx66zh7QjrqB/ofSSGqAgy1yaPhsGoYoZSwk41zbxMfQ98gBfbrbJ3SfYUn7EqEBrL/PKsn6igDvCm2KdyB6k5XeDXipClJ6Zt/cfnWMIvtWN5EVr+QNloyaQm7AkgdhSb7B1bRXseDjiw0LicytMWoULhk435KzxzoWV/5x9Okf3HvibFA6rl6EOkzDZsY1yZ1bMd58fLaCxBbtLU/ssmd8uSPwYJH/uKTocjz0sMdMarQ1Ybwzq4ea5Qsy2hPpsfQmClO04aHL+oEhZdBY0UYZ/k0vJrbs9i7Zx4armwSLWtV9Q3gZlrRo54IqdGdd+HHRuKM3B9Fu9SImQKaOHDn6MELcyL0PLeKdXDc+LBzb8WPKS7qrbq6dGRfb89aK+jR7Df5H4y/zsQKtQ/nXqNt1nNQ/1YXFcldggjiKJuC6nq8/wMUmKKoJrZg3tPyljKmFBsoXT/US5rTL0g34eOYgtXN+QZuId1DkOnrbAarF6clKNGSdO1TJglyP2jfrKasU="
+   GH_REF: github.com/zhouhengheng0705/zhouhengheng0705.github.io.git  #设置GH_REF，注意更改yourname
+   secure: H3V9CshcZpdyd6KuHPAr8HPTsg1P6EU/bnI4Xho4bdqpkOhBEEdY35rI0bP4ieFn6DY1Y/wliQy+ZMO4gYT1WvahO43W3OEl4y3PunoUO4bXyPPNU2IWZe3KKRMjSVq1mN7zKF9LVfh0/NGiIupHRqMOnG8nHsvN/KhnczyDx66zh7QjrqB/ofSSGqAgy1yaPhsGoYoZSwk41zbxMfQ98gBfbrbJ3SfYUn7EqEBrL/PKsn6igDvCm2KdyB6k5XeDXipClJ6Zt/cfnWMIvtWN5EVr+QNloyaQm7AkgdhSb7B1bRXseDjiw0LicytMWoULhk435KzxzoWV/5x9Okf3HvibFA6rl6EOkzDZsY1yZ1bMd58fLaCxBbtLU/ssmd8uSPwYJH/uKTocjz0sMdMarQ1Ybwzq4ea5Qsy2hPpsfQmClO04aHL+oEhZdBY0UYZ/k0vJrbs9i7Zx4armwSLWtV9Q3gZlrRo54IqdGdd+HHRuKM3B9Fu9SImQKaOHDn6MELcyL0PLeKdXDc+LBzb8WPKS7qrbq6dGRfb89aK+jR7Df5H4y/zsQKtQ/nXqNt1nNQ/1YXFcldggjiKJuC6nq8/wMUmKKoJrZg3tPyljKmFBsoXT/US5rTL0g34eOYgtXN+QZuId1DkOnrbAarF6clKNGSdO1TJglyP2jfrKasU=
 
 # configure notifications (email, IRC, campfire etc)
 # please update this section to your needs!
