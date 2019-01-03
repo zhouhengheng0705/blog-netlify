@@ -10,7 +10,7 @@ gulp.task('minify-css', function() {
 gulp.task('minify-html', function() {
   return gulp.src('./public/**/*.html')
   .pipe(htmlclean())
-  .pipe(htmlmin({ 
+  .pipe(htmlmin({
       removeComments: true,
       minifyJS: true,
       minifyCSS: true,
